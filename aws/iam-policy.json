@@ -1,0 +1,44 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "GetBucketLocation",
+      "Effect": "Allow",
+      "Action": "s3:GetBucketLocation",
+      "Resource": "arn:aws:s3:::lslabsessions-adb-s3-lab"
+    },
+    {
+      "Sid": "ListLabPrefixes",
+      "Effect": "Allow",
+      "Action": "s3:ListBucket",
+      "Resource": "arn:aws:s3:::lslabsessions-adb-s3-lab",
+      "Condition": {
+        "StringLike": {
+          "s3:prefix": [
+            "inbound/*",
+            "outbound/*"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "ReadAndDeleteInbound",
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject",
+        "s3:DeleteObject"
+      ],
+      "Resource": "arn:aws:s3:::lslabsessions-adb-s3-lab/inbound/*"
+    },
+    {
+      "Sid": "ReadWriteDeleteOutbound",
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject",
+        "s3:PutObject",
+        "s3:DeleteObject"
+      ],
+      "Resource": "arn:aws:s3:::lslabsessions-adb-s3-lab/outbound/*"
+    }
+  ]
+}
