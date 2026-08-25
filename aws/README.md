@@ -80,8 +80,6 @@ AWS Secret Access Key -> DBMS_CLOUD credential password
 
 Never commit either value to GitHub. The secret access key should never appear in screenshots.
 
-For a production design, consider Oracle Autonomous Database support for AWS role/ARN-based access, which uses temporary AWS STS credentials instead of a long-lived IAM user secret.
-
 ## References
 
 - AWS bucket namespaces: https://docs.aws.amazon.com/AmazonS3/latest/userguide/gpbucketnamespaces.html
