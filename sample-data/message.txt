@@ -1,0 +1,7 @@
+Oracle Autonomous Database and Amazon S3 integration lab.
+
+This file is used to demonstrate text file retrieval from Amazon S3.
+
+UTF-8 validation:
+Português: ação, informação, coração, João
+Symbols: € £ ¥
